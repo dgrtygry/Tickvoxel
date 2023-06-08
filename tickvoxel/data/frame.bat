@@ -1,6 +1,9 @@
 @echo off
+setlocal enabledelayedexpansion
+
 echo Searching for frames.bat...
 
+:search_frames
 setlocal enabledelayedexpansion
 
 rem Variables to store the highest frame number and corresponding file name
@@ -26,6 +29,23 @@ if defined highestFrameFile (
     call "!highestFrameFile!"
 ) else (
     echo No frames.bat files found.
+)
+
+endlocal
+
+:check_input
+setlocal enabledelayedexpansion
+
+echo.
+echo Press "E" to go back to the title screen.
+
+set "input="
+set /p "input="
+if /i "!input!"=="E" (
+    cd ..
+    call title.bat
+) else (
+    goto check_input
 )
 
 endlocal
