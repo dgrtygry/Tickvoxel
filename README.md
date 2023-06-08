@@ -1,2 +1,4 @@
 # Tickvoxel
-A voxel generation game where you can generate and explore worlds. 
+
+
+A batchfile clone of Minecraft.
